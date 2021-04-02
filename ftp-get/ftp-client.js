@@ -8,9 +8,6 @@ const log = require("single-line-log").stdout;
  */
 const FTP_SERVER = "ftp.datasus.gov.br";
 
-const FTP_DIR = "/cnes/";
-const FTP_FILE = "BASE_DE_DADOS_CNES_202102.ZIP";
-
 class FtpClient {
   /**
    * Cria instância de acesso a servidor de FTP. Arquivos
@@ -48,7 +45,7 @@ class FtpClient {
     });
   }
 
-  async get(file, dir = "", destino = "ftp.file", server = this.server) {
+  async get(file, dir = "", destino = file, server = this.server) {
     const totalBytes = await this.size(file, dir, server);
 
     return new Promise((resolve, reject) => {
@@ -84,16 +81,4 @@ class FtpClient {
   }
 }
 
-async function main() {
-  try {
-    const cliente = new FtpClient();
-    const lidos = await cliente.get(FTP_FILE, FTP_DIR, "x.ftp");
-    cliente.close();
-    console.log(lidos);
-  } catch (erro) {
-    console.log("\nERRO:");
-    console.log(erro);
-  }
-}
-
-main();
+module.exports = FtpClient;
