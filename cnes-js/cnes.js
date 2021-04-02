@@ -2,7 +2,7 @@ const jszip = require("jszip");
 const fs = require("fs");
 
 //ftp://ftp.datasus.gov.br/cnes/BASE_DE_DADOS_CNES_202102.ZIP
-const zipfile = "../../datasus/TabelaUnificada_202103_v2103031426.zip";
+const zipfile = "../ftp-get/BASE_DE_DADOS_CNES_202102.ZIP";
 
 class SigtapZip {
   constructor(zipFilename) {
