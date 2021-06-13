@@ -1,5 +1,10 @@
-# cnes
-Manipulação da base de dados do CNES
+## Cadastro Nacional de Estabelecimentos de Saúde (CNES)
+
+Mantém dados pertinentes a todos os estabelecimanetos de saúde no território nacional.
+
+## Objetivo
+
+Componente de software para consulta à base de dados do CNES.
 
 ### Projetos correlatos
 
